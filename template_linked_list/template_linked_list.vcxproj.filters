@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{fd2f81b1-e1fe-4ed4-8b10-dc296d6d493a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Файлы заголовков">
+      <UniqueIdentifier>{9435dc39-afe8-45e2-81b7-41ce64f5ae14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Файлы ресурсов">
+      <UniqueIdentifier>{b8c9b4a5-d2e1-4c80-b0c4-317c31bb4bde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Sorts">
+      <UniqueIdentifier>{4c84c5c0-4617-4851-bfdc-038941ca3b83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Sorts\Файлы заоловков">
+      <UniqueIdentifier>{9b9d9723-3e12-439f-97f4-691247e5a8a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Sorts\Файлы ресурсов">
+      <UniqueIdentifier>{32cf5e6f-b11a-48a9-96e9-4d3675a3b226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Date">
+      <UniqueIdentifier>{bb754bb5-b77b-4ccf-8708-df3f7e0977eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Date\Файлы ресурсов">
+      <UniqueIdentifier>{6c47d25c-48a4-4510-a2d7-89bb5fada2a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Date\Файлы заголовков">
+      <UniqueIdentifier>{c8114ba8-a78d-4dd9-8ea4-b8030b244b24}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы\Файлы ресурсов</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
