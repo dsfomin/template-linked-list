@@ -1,6 +1,6 @@
 #pragma once
-#include "date/Date.h"
-#include "date/Time.h"
+#include "Date.h"
+#include "Time.h"
 
 class DateTime : Date, Time {
 public:

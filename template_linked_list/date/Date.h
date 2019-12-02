@@ -72,7 +72,7 @@ public:
 			this->day = day;
 		}
 		else
-			throw invalid_argument("Incorrect Date Format!");
+			throw ("Incorrect Date Format!");
 	}
 
 	/** Method, which return value: year */

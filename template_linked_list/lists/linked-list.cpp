@@ -1,4 +1,5 @@
 #include "linked-list.h"
+#include "../date/DateTime.h"
 
 template<typename T>
 Linked_List<T>::Linked_List()
@@ -137,7 +138,7 @@ template<typename T>
 void Linked_List<T>::insertionSort()
 {
 	int i, j;
-	Date key;
+	DateTime key;
 	for (i = 1; i < this->Size; i++)
 	{
 		key = this[0][i];

@@ -48,11 +48,23 @@
     <ClCompile Include="date\Time.cpp">
       <Filter>Исходные файлы\Date\Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="linked-list.cpp">
+    <ClCompile Include="date\DateTime.cpp">
+      <Filter>Исходные файлы\Date\Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="lists\linked-list.cpp">
       <Filter>Исходные файлы\Lists\Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="DateTime.cpp">
-      <Filter>Исходные файлы\Date\Файлы ресурсов</Filter>
+    <ClCompile Include="sorts\insertion_sort.cpp">
+      <Filter>Исходные файлы\Sorts\Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="sorts\merge_sort.cpp">
+      <Filter>Исходные файлы\Sorts\Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="sorts\quick_sort.cpp">
+      <Filter>Исходные файлы\Sorts\Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="lists\array-list.cpp">
+      <Filter>Исходные файлы\Lists\Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,11 +74,26 @@
     <ClInclude Include="date\Time.h">
       <Filter>Исходные файлы\Date\Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="DateTime.h">
+    <ClInclude Include="date\DateTime.h">
       <Filter>Исходные файлы\Date\Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="linked-list.h">
+    <ClInclude Include="lists\linked-list.h">
       <Filter>Исходные файлы\Lists\Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="sorts\insertion_sort.h">
+      <Filter>Исходные файлы\Sorts\Файлы заоловков</Filter>
+    </ClInclude>
+    <ClInclude Include="sorts\merge_sort.h">
+      <Filter>Исходные файлы\Sorts\Файлы заоловков</Filter>
+    </ClInclude>
+    <ClInclude Include="sorts\quick_sort.h">
+      <Filter>Исходные файлы\Sorts\Файлы заоловков</Filter>
+    </ClInclude>
+    <ClInclude Include="lists\array-list.h">
+      <Filter>Исходные файлы\Lists\Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="demo\Demonstration.h">
+      <Filter>Исходные файлы\Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

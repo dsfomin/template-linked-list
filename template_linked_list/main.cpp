@@ -1,7 +1,8 @@
 #include <iostream>
+#include "demo/Demonstration.h"
 
 int main() {
-	std::cout << "HI";
-	system("pause");
+	Demonstration demo;
+	demo.Run();
 	return 0;
 }

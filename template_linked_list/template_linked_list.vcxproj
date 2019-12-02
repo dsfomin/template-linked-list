@@ -19,17 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DateTime.cpp" />
     <ClCompile Include="date\Date.cpp" />
+    <ClCompile Include="date\DateTime.cpp" />
     <ClCompile Include="date\Time.cpp" />
-    <ClCompile Include="linked-list.cpp" />
+    <ClCompile Include="lists\array-list.cpp" />
+    <ClCompile Include="lists\linked-list.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="sorts\insertion_sort.cpp" />
+    <ClCompile Include="sorts\merge_sort.cpp" />
+    <ClCompile Include="sorts\quick_sort.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DateTime.h" />
     <ClInclude Include="date\Date.h" />
+    <ClInclude Include="date\DateTime.h" />
     <ClInclude Include="date\Time.h" />
-    <ClInclude Include="linked-list.h" />
+    <ClInclude Include="demo\Demonstration.h" />
+    <ClInclude Include="lists\array-list.h" />
+    <ClInclude Include="lists\linked-list.h" />
+    <ClInclude Include="sorts\insertion_sort.h" />
+    <ClInclude Include="sorts\merge_sort.h" />
+    <ClInclude Include="sorts\quick_sort.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
