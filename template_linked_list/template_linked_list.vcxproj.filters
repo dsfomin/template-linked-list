@@ -28,10 +28,27 @@
     <Filter Include="Исходные файлы\Date\Файлы заголовков">
       <UniqueIdentifier>{c8114ba8-a78d-4dd9-8ea4-b8030b244b24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Lists">
+      <UniqueIdentifier>{150eeb4c-68f3-4783-81d7-8a6518a54282}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы\Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="date\Date.cpp">
+      <Filter>Исходные файлы\Date\Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="date\Time.cpp">
+      <Filter>Исходные файлы\Date\Файлы ресурсов</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="date\Date.h">
+      <Filter>Исходные файлы\Date\Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="date\Time.h">
+      <Filter>Исходные файлы\Date\Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -24,7 +24,7 @@
 /**
  * @file Date.h
  *
- * @brief Class for date
+ * @brief Header file for date class
  *
  * @ingroup PackageName
  *
@@ -64,18 +64,15 @@ public:
 	* @param year
 	* @param month
 	* @param day
-	* @param time
 	*/
-	Date(int year, int month, int day, Time time = Time(0, 0, 0)) { // Конструктор
+	Date(int year, int month, int day) { // Конструктор
 		if (DateIsCorrect(year, month, day) == 1) {
 			this->year = year;
 			this->month = month;
 			this->day = day;
-			this->time = time;
-			this->WeekDay = FindWeekDay(year, month, day);
 		}
 		else
-			throw ("Incorrect Date Format!");
+			throw invalid_argument("Incorrect Date Format!");
 	}
 
 	/** Method, which return value: year */
@@ -87,8 +84,20 @@ public:
 	/** Method, which return value: day */
 	int GetDay() { return this->day; }
 
-	/** Method, which return value: time */
-	Time GetTime() { return this->time; }
+	/** Method, which set value: year
+	* @param year
+	*/
+	void SetYear(int year) { this->year = year; }
+
+	/** Method, which set value: month
+	* @param month
+	*/
+	void SetMonth(int month) { this->month = month; }
+
+	/** Method, which set value: day
+	* @param day
+	*/
+	void SetDay(int day) { this->day = day; }
 
 	/** Operator, which add another date to this date
 	*
@@ -126,6 +135,22 @@ public:
 	*/
 	bool operator==(Date toCompare);
 
+	/** Operator, which compare another date with this date
+	*
+	* @return true if this date is equal or greater to another
+	*
+	* @param another date
+	*/
+	bool operator>=(Date toCompare);
+
+	/** Operator, which compare another date with this date
+	*
+	* @return true if this date is equal or less to another
+	*
+	* @param another date
+	*/
+	bool operator<=(Date toCompare);
+
 	/** Method, which convert enum value to string
 	*
 	* @param enum dayWeek
@@ -157,6 +182,8 @@ public:
 	* @param day
 	*/
 	bool DateIsCorrect(int year, int month, int day);
+	int countOfDaysInMonth(int y, int m);
+	bool is_leap(int year);
 
 private:
 	dayWeek WeekDay; ///< day of the week
@@ -166,8 +193,6 @@ private:
 	int month; ///< month
 
 	int day; ///< day
-
-	Time time; ///< time
 };
 
 #endif // !

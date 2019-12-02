@@ -1,32 +1,26 @@
-// -*- lsst-c++ -*-
-/*
-* LSST Data Management System
-* See COPYRIGHT file at the top of the source tree.
-*
-* This product includes software developed by the
-* LSST Project (http://www.lsst.org/).
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the LSST License Statement and
-* the GNU General Public License along with this program. If not,
-* see <http://www.lsstcorp.org/LegalNotices/>.
-*/
-
 #pragma once
 #include "Time.h"
 #include <iomanip>
 
 
 using namespace std;
+
+bool Time::checkAddingOfTime(Time lhs, Time rhs) {
+	int th = lhs.GetHour() + rhs.GetHour();
+	int tm = lhs.GetMinute() + rhs.GetMinute();
+	int ts = lhs.GetSecond() + rhs.GetSecond();
+	if (ts > 59) {
+		ts %= 60;
+		tm++;
+	}
+	if (tm > 59) {
+		tm %= 60;
+		th++;
+	}
+	if (th > 23)
+		return true;
+	return false;
+}
 
 Time Time::operator+(Time toAdd) {
 	int th, tm, ts;
@@ -49,24 +43,35 @@ Time Time::operator-(Time toMin) {
 	return Time();
 }
 
-Time Time::operator<(Time toCompare)
-{
-
-	return Time();
+bool Time::operator<(Time toCompare) {
+	if (this->hour != toCompare.hour) return (this->hour < toCompare.hour);
+	if (this->minute != toCompare.minute) return (this->minute < toCompare.minute);
+	return this->second < toCompare.second;
 }
 
-Time Time::operator>(Time toCompare)
-{
-	return Time();
+bool Time::operator>(Time toCompare) {
+	if (this->hour != toCompare.hour) return (this->hour > toCompare.hour);
+	if (this->minute != toCompare.minute) return (this->minute > toCompare.minute);
+	return this->second > toCompare.second;
 }
 
-Time Time::operator==(Time toCompare)
-{
-	return Time();
+bool Time::operator==(Time toCompare) {
+	return (this->hour == toCompare.hour && this->minute == toCompare.minute && this->second == toCompare.second);
 }
 
-bool Time::TimeIsCorrect(int h, int m, int s)
+bool Time::operator!=(Time toCompare)
 {
+	return (this->hour != toCompare.hour || this->minute != toCompare.minute || this->second != toCompare.second);
+}
+
+bool Time::operator<=(Time toCompare) {
+	return ((Time(this->hour, this->minute, this->second) == toCompare) || (Time(this->hour, this->minute, this->second) < toCompare));
+}
+bool Time::operator>=(Time toCompare) {
+	return ((Time(this->hour, this->minute, this->second) == toCompare) || (Time(this->hour, this->minute, this->second) > toCompare));
+}
+
+bool Time::TimeIsCorrect(int h, int m, int s) {
 	if (h < 0 || h > 23) return false;
 	if (m < 0 || m > 59) return false;
 	if (s < 0 || s > 59) return false;

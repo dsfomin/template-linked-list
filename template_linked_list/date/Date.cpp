@@ -1,49 +1,8 @@
-// -*- lsst-c++ -*-
-/*
-* LSST Data Management System
-* See COPYRIGHT file at the top of the source tree.
-*
-* This product includes software developed by the
-* LSST Project (http://www.lsst.org/).
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation, either version 3 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the LSST License Statement and
-* the GNU General Public License along with this program. If not,
-* see <http://www.lsstcorp.org/LegalNotices/>.
-*/
-
 #pragma once
 #include "Date.h"
 
-// Проверяет выйдет ли сумма времен за границу 24 часов
-bool checkAddingOfTime(Time lhs, Time rhs) {
-	int th = lhs.GetHour() + rhs.GetHour();
-	int tm = lhs.GetMinute() + rhs.GetMinute();
-	int ts = lhs.GetSecond() + rhs.GetSecond();
-	if (ts > 59) {
-		ts %= 60;
-		tm++;
-	}
-	if (tm > 59) {
-		tm %= 60;
-		th++;
-	}
-	if (th > 23)
-		return true;
-	return false;
-}
-
 // Проверяет являеться ли год высокосным
-bool is_leap(int year) {
+bool Date::is_leap(int year) {
 	if (year % 4)
 		return false;
 	else if (year % 100)
@@ -52,7 +11,7 @@ bool is_leap(int year) {
 }
 
 // Возращает количество дней в определенном месяце и годе
-int countOfDaysInMonth(int y, int m) {
+int Date::countOfDaysInMonth(int y, int m) {
 	if (m == 1 || m == 3 || m == 5 || m == 12 || m == 10 || m == 8 || m == 7) return 31;
 	else if (m == 4 || m == 6 || m == 9 || m == 11) return 30;
 	else if (m == 2) return is_leap(y) ? 29 : 28;
@@ -86,7 +45,6 @@ dayWeek Date::FindWeekDay(int year, int month, int day) {
 
 Date Date::operator+(Date toAdd) {
 	int ty, tm, td;
-	Time t = this->GetTime() + toAdd.GetTime();
 	tm = this->GetMonth() + toAdd.GetMonth();
 	td = this->GetDay() + toAdd.GetDay();
 	ty = this->GetYear() + toAdd.GetYear();
@@ -103,11 +61,8 @@ Date Date::operator+(Date toAdd) {
 		tm %= 12;
 		ty++;
 	}
-	if (checkAddingOfTime(this->GetTime(), toAdd.GetTime())) {
-		td++;
-	}
 
-	return Date(ty, tm, td, t);
+	return Date(ty, tm, td);
 }
 
 Date Date::operator-(Date toMin) {
@@ -129,15 +84,29 @@ bool Date::operator>(Date toCompare) {
 		return this->GetYear() > toCompare.GetYear();
 	else if (this->GetMonth() != toCompare.GetMonth())
 		return this->GetMonth() > toCompare.GetMonth();
-	/*else if (this->GetTime() != this->GetTime())
-		return (this->GetTime() > toCompare.GetTime());*/
 	return this->GetDay() > toCompare.GetDay();
 }
 
 bool Date::operator==(Date toCompare)
 {
-	return ((this->GetDay() == toCompare.GetDay()) && (this->GetMonth() == toCompare.GetMonth()) && (this->GetMonth() == toCompare.GetMonth()));
+	return ((this->GetDay() == toCompare.GetDay()) && (this->GetMonth() == toCompare.GetMonth()) && (this->GetYear() == toCompare.GetYear()));
 }
+
+bool Date::operator!=(Date toCompare)
+{
+	return ((this->GetDay() != toCompare.GetDay()) || (this->GetMonth() != toCompare.GetMonth()) || (this->GetYear() != toCompare.GetYear()));
+}
+
+bool Date::operator>=(Date toCompare)
+{
+	return ((Date(this->year, this->month, this->day) == toCompare) || (Date(this->year, this->month, this->day) > toCompare));
+}
+
+bool Date::operator<=(Date toCompare)
+{
+	return ((Date(this->year, this->month, this->day) == toCompare) || (Date(this->year, this->month, this->day) < toCompare));
+}
+
 
 string Date::enToString(dayWeek d)
 {
@@ -158,7 +127,7 @@ string Date::enToString(dayWeek d)
 		return string("SUNDAY");
 	default:
 		return string("UNKNOWN");
-	}return string();
+	} return string();
 }
 
 bool Date::DateIsCorrect(int y, int m, int d)

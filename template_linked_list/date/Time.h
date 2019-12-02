@@ -24,7 +24,7 @@
 /**
  * @file Time.h
  *
- * @brief Class for time
+ * @brief Header file for class time
  *
  * @ingroup PackageName
  *
@@ -58,7 +58,7 @@ public:
 			this->second = s;
 		}
 		else
-			throw ("Incorrect Time Format!");
+			throw invalid_argument("Incorrect Time Format!");
 	}
 
 	// Получить час
@@ -70,6 +70,15 @@ public:
 	// Получить секунду
 	int GetSecond() { return this->second;}
 
+	// Получить час
+	void SetHour(int hour) { this->hour = hour; }
+
+	// Получить минуту
+	void SetMinute(int min) { this->minute = min; }
+
+	// Получить секунду
+	void SetSecond(int sec) { this->second = sec; }
+
 	// Оператор сложения двух времен
 	Time operator+(Time toAdd);
 
@@ -77,16 +86,23 @@ public:
 	Time operator-(Time toMin);
 
 	// Оператор сравнения меньше двух времен
-	Time operator<(Time toCompare);
+	bool operator<(Time toCompare);
 
 	// Оператор сравнения больше двух времен
-	Time operator>(Time toCompare);
+	bool operator>(Time toCompare);
 
 	// Оператор сравнения тождества двух времен
-	Time operator==(Time toCompare); 
+	bool operator==(Time toCompare); 
+
+	bool operator==(Time toCompare);
+
+	bool operator>=(Time toCompare);
+
+	bool operator<=(Time toCompare);
 
 	// Проверка на валидность времени
 	bool TimeIsCorrect(int h, int m, int s);
+	bool checkAddingOfTime(Time lhs, Time rhs);
 private:
 	// Час
 	int hour;
