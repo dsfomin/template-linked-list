@@ -31,6 +31,12 @@
     <Filter Include="Исходные файлы\Lists">
       <UniqueIdentifier>{150eeb4c-68f3-4783-81d7-8a6518a54282}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Lists\Файлы заголовков">
+      <UniqueIdentifier>{73956c92-c79d-4f2e-939a-b0a6a9d5bf1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Lists\Файлы ресурсов">
+      <UniqueIdentifier>{451eaa72-e1a3-452a-9ff4-05347c5a6ade}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,6 +48,12 @@
     <ClCompile Include="date\Time.cpp">
       <Filter>Исходные файлы\Date\Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="linked-list.cpp">
+      <Filter>Исходные файлы\Lists\Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>Исходные файлы\Date\Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="date\Date.h">
@@ -49,6 +61,12 @@
     </ClInclude>
     <ClInclude Include="date\Time.h">
       <Filter>Исходные файлы\Date\Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>Исходные файлы\Date\Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="linked-list.h">
+      <Filter>Исходные файлы\Lists\Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

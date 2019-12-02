@@ -6,7 +6,7 @@ DateTime DateTime::operator+(DateTime toAdd) {
 	if (checkAddingOfTime(this->GetTime(), toAdd.GetTime())) {
 		d.SetDay(d.GetDay() + 1);
 	}
-	return DateTime(d,t);
+	return DateTime(d, t);
 }
 
 bool DateTime::operator<(DateTime toCompare)

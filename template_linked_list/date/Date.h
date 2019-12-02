@@ -137,6 +137,14 @@ public:
 
 	/** Operator, which compare another date with this date
 	*
+	* @return true if this date is not equal to another
+	*
+	* @param another date
+	*/
+	bool operator!=(Date toCompare);
+
+	/** Operator, which compare another date with this date
+	*
 	* @return true if this date is equal or greater to another
 	*
 	* @param another date

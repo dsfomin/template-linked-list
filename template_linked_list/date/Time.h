@@ -38,6 +38,7 @@
 
 #pragma once
 #include <iomanip>
+#include <exception>
 
  /**
   * Class for time
@@ -58,7 +59,7 @@ public:
 			this->second = s;
 		}
 		else
-			throw invalid_argument("Incorrect Time Format!");
+			throw ("Incorrect Time Format!");
 	}
 
 	// Получить час
@@ -94,7 +95,7 @@ public:
 	// Оператор сравнения тождества двух времен
 	bool operator==(Time toCompare); 
 
-	bool operator==(Time toCompare);
+	bool operator!=(Time toCompare);
 
 	bool operator>=(Time toCompare);
 
