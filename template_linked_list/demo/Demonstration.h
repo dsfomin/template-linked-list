@@ -18,7 +18,8 @@ public:
 		cout << "2) Linked_list with doubles" << endl;
 		cout << "3) Linked_list with strings" << endl;
 		cout << "4) Linked_list with vectors" << endl;
-		cout << "5) Back" << endl;
+		cout << "5) Linked list with DateTime" << endl;
+		cout << "6) Exit" << endl;
 		int type = 0;
 		cin >> type;
 		system("cls");
@@ -79,7 +80,7 @@ public:
 			vector<int> v3 = { 1, 2, 4, 2 };
 			vector<vector<int>> vv = { v1, v2, v3 };
 			Linked_List<vector<int>> list(vv);
-			cout << "Before sorting: ";
+			cout << "Before sorting: " << endl;
 			for (int i = 0; i < list.GetSize(); i++) {
 				cout << i + 1 << " vector: ";
 				for (int j = 0; j < list[i].size(); j++) {
@@ -88,7 +89,7 @@ public:
 				cout << endl;
 			}
 			insertionSort(list);
-			cout << endl << "After sorting: ";
+			cout << endl << "After sorting: " << endl;
 			for (int i = 0; i < list.GetSize(); i++) {
 				cout << i + 1 << " vector: ";
 				for (int j = 0; j < list[i].size(); j++) {
@@ -102,6 +103,27 @@ public:
 			Linked_list_menu();
 		}
 		else if (type == 5) {
+			DateTime dt1(2012, 2, 4, 21, 51, 53);
+			DateTime dt2(2013, 1, 3, 22, 52, 54);
+			DateTime dt3(2011, 4, 2, 23, 57, 55);
+			DateTime dt4(2014, 3, 1, 23, 58, 56);
+			vector<DateTime> v = { dt1, dt2, dt3, dt4 };
+			Linked_List<DateTime> list(v);
+			cout << "Before sorting: " << endl;
+			for (int i = 0; i < list.GetSize(); i++) {
+				cout << list[i] << endl;
+			}
+			insertionSort(list);
+			cout << endl << "After sorting: " << endl;
+			for (int i = 0; i < list.GetSize(); i++) {
+				cout << list[i] << endl;
+			}
+			cout << endl;
+			system("pause>nul");
+			system("cls");
+			Linked_list_menu();
+		}
+		else if (type == 6) {
 			system("cls");
 			Run();
 		}
@@ -117,7 +139,8 @@ public:
 		cout << "2) Array_list with doubles" << endl;
 		cout << "3) Array_list with strings" << endl;
 		cout << "4) Array_list with vectors" << endl;
-		cout << "5) Back" << endl;
+		cout << "5) Array_list with DateTime" << endl;
+		cout << "6) Back" << endl;
 		int type = 0; 
 		cin >> type;
 		system("cls");
@@ -178,7 +201,7 @@ public:
 			vector<int> v3 = { 1, 2, 4, 2 };
 			vector<vector<int>> vv = { v1, v2, v3 };
 			Array_List<vector<int>> arr_list(vv);
-			cout << "Before sorting: ";
+			cout << "Before sorting: " << endl;
 			for (int i = 0; i < arr_list.GetSize(); i++) {
 				cout << i + 1 << " vector: ";
 				for (int j = 0; j < arr_list[i].size(); j++) {
@@ -187,7 +210,7 @@ public:
 				cout << endl;
 			}
 			insertionSort(arr_list);
-			cout << endl << "After sorting: ";
+			cout << endl << "After sorting: " << endl;
 			for (int i = 0; i < arr_list.GetSize(); i++) {
 				cout << i + 1 << " vector: ";
 				for (int j = 0; j < arr_list[i].size(); j++) {
@@ -201,6 +224,27 @@ public:
 			Array_list_menu();
 		}
 		else if (type == 5) {
+			DateTime dt1(2012, 2, 4, 21, 51, 53);
+			DateTime dt2(2013, 1, 3, 22, 52, 54);
+			DateTime dt3(2011, 4, 2, 23, 57, 55);
+			DateTime dt4(2014, 3, 1, 24, 58, 56);
+			vector<DateTime> v = { dt1, dt2, dt3, dt4 };
+			Array_List<DateTime> list(v);
+			cout << "Before sorting: " << endl;
+			for (int i = 0; i < list.GetSize(); i++) {
+				cout << list[i] << endl;
+			}
+			insertionSort(list);
+			cout << endl << "After sorting: " << endl;
+			for (int i = 0; i < list.GetSize(); i++) {
+				cout << list[i] << endl;
+			}
+			cout << endl;
+			system("pause>nul");
+			system("cls");
+			Linked_list_menu();
+		}
+		else if (type == 6) {
 			system("cls");
 			Run();
 		}
@@ -216,7 +260,8 @@ public:
 		cout << "2) Vector with doubles" << endl;
 		cout << "3) Vector with strings" << endl;
 		cout << "4) Vector with vectors" << endl;
-		cout << "5) Back" << endl;
+		cout << "5) Vector with DateTime" << endl;
+		cout << "6) Back" << endl;
 		int type = 0; 
 		cin >> type;
 		system("cls");
@@ -273,7 +318,7 @@ public:
 			vector<int> v2 = { 1, 1, 4, 2 };
 			vector<int> v3 = { 1, 2, 4, 2 };
 			vector<vector<int>> vv = { v1, v2, v3 };
-			cout << "Before sorting: ";
+			cout << "Before sorting: " << endl;
 			for (int i = 0; i < vv.size(); i++) {
 				cout << i + 1 << " vector: ";
 				for (int j = 0; j < vv[i].size(); j++) {
@@ -282,7 +327,7 @@ public:
 				cout << endl;
 			}
 			insertionSort(vv);
-			cout << endl << "After sorting: ";
+			cout << endl << "After sorting: " << endl;
 			for (int i = 0; i < vv.size(); i++) {
 				cout << i + 1 << " vector: ";
 				for (int j = 0; j < vv[i].size(); j++) {
@@ -296,6 +341,26 @@ public:
 			Vector_menu();
 		}
 		else if (type == 5) {
+			DateTime dt1(2012, 2, 4, 21, 51, 53);
+			DateTime dt2(2013, 1, 3, 22, 52, 54);
+			DateTime dt3(2011, 4, 2, 23, 57, 55);
+			DateTime dt4(2014, 3, 1, 24, 58, 56);
+			vector<DateTime> v = { dt1, dt2, dt3, dt4 };
+			cout << "Before sorting: " << endl;
+			for (int i = 0; i < v.size(); i++) {
+				cout << v[i] << endl;
+			}
+			insertionSort(v);
+			cout << endl << "After sorting: " << endl;
+			for (int i = 0; i < v.size(); i++) {
+				cout << v[i] << endl;
+			}
+			cout << endl;
+			system("pause>nul");
+			system("cls");
+			Linked_list_menu();
+		}
+		else if (type == 6) {
 			system("cls");
 			Run();
 		}

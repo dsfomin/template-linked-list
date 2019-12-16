@@ -51,20 +51,11 @@
     <ClCompile Include="date\DateTime.cpp">
       <Filter>Исходные файлы\Date\Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="lists\linked-list.cpp">
-      <Filter>Исходные файлы\Lists\Файлы ресурсов</Filter>
-    </ClCompile>
-    <ClCompile Include="sorts\insertion_sort.cpp">
-      <Filter>Исходные файлы\Sorts\Файлы ресурсов</Filter>
-    </ClCompile>
     <ClCompile Include="sorts\merge_sort.cpp">
       <Filter>Исходные файлы\Sorts\Файлы ресурсов</Filter>
     </ClCompile>
     <ClCompile Include="sorts\quick_sort.cpp">
       <Filter>Исходные файлы\Sorts\Файлы ресурсов</Filter>
-    </ClCompile>
-    <ClCompile Include="lists\array-list.cpp">
-      <Filter>Исходные файлы\Lists\Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

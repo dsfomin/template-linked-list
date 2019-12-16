@@ -66,6 +66,8 @@ public:
 	* @param another datetime
 	*/
 	bool operator!=(DateTime toCompare);
+
+	friend ostream& operator<<(ostream& stream, DateTime& dt);
 private:
 	Date date;
 	Time time;

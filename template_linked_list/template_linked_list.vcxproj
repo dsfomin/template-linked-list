@@ -22,10 +22,7 @@
     <ClCompile Include="date\Date.cpp" />
     <ClCompile Include="date\DateTime.cpp" />
     <ClCompile Include="date\Time.cpp" />
-    <ClCompile Include="lists\array-list.cpp" />
-    <ClCompile Include="lists\linked-list.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="sorts\insertion_sort.cpp" />
     <ClCompile Include="sorts\merge_sort.cpp" />
     <ClCompile Include="sorts\quick_sort.cpp" />
   </ItemGroup>
