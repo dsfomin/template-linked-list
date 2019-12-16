@@ -1,13 +1,20 @@
 #pragma once
 #include "../lists/array-list.h"
 #include "../lists/linked-list.h"
+#include "../date/DateTime.h"
 #include <vector>
 
-void merge(vector<DateTime>& vec, int l, int m, int r);
-void mergeSort(vector<DateTime>& vec);
+template <class T>
+void merge(vector<T>& vec, int l, int m, int r);
+template <class T>
+void mergeSort(vector<T>& vec, int l, int r);
 
-void merge(Linked_List<DateTime> list, int l, int m, int r);
-void mergeSort(Linked_List<DateTime> list);
+template <class T>
+void merge(Linked_List<T> list, int l, int m, int r);
+template <class T>
+void mergeSort(Linked_List<T> list, int l, int r);
 
-void merge(Array_List<DateTime> arr_list, int l, int m, int r);
-void mergeSort(Array_List<DateTime> arr_list);
+template <class T>
+void merge(Array_List<T> arr_list, int l, int m, int r);
+template <class T>
+void mergeSort(Array_List<T> arr_list, int l, int r);

@@ -34,12 +34,6 @@ public:
 	* @param another datetime
 	*/
 	DateTime operator+(DateTime toAdd);
-
-	/** Operator, which subtract another datetime from this datetime
-	*
-	* @param another datetime
-	*/
-	DateTime operator-(DateTime toMin);
 	
 	/** Operator, which compare another datetime with this datetime
 	*
